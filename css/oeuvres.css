@@ -32,6 +32,101 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+/* ================>  SPINNER */
+.container{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  height: 100vh;
+  inset: 0px;
+  z-index: 100;
+  visibility: hidden;
+  animation: spinner 2s linear;
+}
+
+.ring{
+  width: 100px;
+  height: 100px;
+  border: 0px solid white;
+  border-radius: 50%;
+  position: absolute;
+  visibility: hidden;
+}
+
+.ring:nth-child(1){
+  border-bottom-width: 8px;
+  border-color: rgb(255, 0, 255);
+  animation: rotate1 2s linear;
+}
+
+@keyframes rotate1{
+  from{
+      transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+      visibility: visible;
+      opacity: 1;
+  }
+  to{
+      transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+      visibility: hidden;
+      opacity: 0;
+  }
+}
+
+.ring:nth-child(2){
+  border-right-width: 8px;
+  border-color: var(--main-color);
+  animation: rotate2 2s linear;
+}
+
+@keyframes rotate2{
+  from{
+      transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+      visibility: visible;
+      opacity: 1;
+  }
+  to{
+      transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+      visibility: hidden;
+      opacity: 0;
+  }
+}
+
+.ring:nth-child(3){
+  border-top-width: 8px;
+  border-color: rgb(0, 247, 13);
+  animation: rotate3 2s linear;
+}
+
+@keyframes rotate3{
+  from{
+      transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+      visibility: visible;
+      opacity: 1;
+  }
+  to{
+      transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+      visibility: hidden;
+      opacity: 0;
+  }
+}
+
+@keyframes spinner {
+  0% {
+    visibility: visible;
+    opacity: 0.9;
+  }
+  70% {
+    visibility: visible;
+    opacity: 0.9;
+  }
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
 nav {
   width: 100%;
   position: fixed;
