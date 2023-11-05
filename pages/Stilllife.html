@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="../css/stilllife.css">
+    <title>Stilllife-Natures mortes</title>
+
+    <style>
+        .fullsize{
+            border: 11px solid green;
+            z-index: 999;
+            cursor: zoom-out;
+            display: block;
+            width: 400px;
+            max-width: 400px;
+            height: 550px;
+            position: fixed;
+            left: 100px;
+            top: 30px;
+        }
+
+        .container .popup-image{
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, .9);
+            height: 100%;
+            width: 100%;
+            z-index: 100;
+            display: none;
+        }
+
+        .container .popup-image span{
+            position: absolute;
+            top: 0;
+            right: 15px;
+            font-size: 60px;
+            font-weight: bolder;
+            cursor: pointer;
+            color: #fff;
+            z-index: 100;
+        }
+
+        .container .popup-image img{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            
+            border-radius: 5px;
+           
+            max-width: 70vw;
+            height: 90vh;
+            object-fit: cover;
+            font-size: 60px;
+            font-weight: bolder;
+            cursor: pointer;
+            color: #fff;
+            z-index: 100;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <header class="head">
+        <div class="head_arrow">
+            <a href="../pages/oeuvres.html">
+                <i class="bx bx-arrow-back head_arrow--color"></i>
+                <i class="bx bx-arrow-back head_arrow--colorfull"></i>
+            </a>
+        </div>
+    </header>
+
+
+    <section class="container"> 
+        <div class="slider-wrapper">
+            <div class="slider">
+                
+                <img id="slide-1" src="../assets/Stilllife-Natures mortes/Artcurial détail.jpg" alt="" onclick="change(this)">
+                
+                <img id="slide-2" src="../assets/Stilllife-Natures mortes/Rendez-vous avec Jean-Luc Godard_huile sur toile_2015 .jpg" alt="" onclick="change(this)">
+            
+                <img id="slide-3" src="../assets/Stilllife-Natures mortes/Stillife-_3-_pot-de-miel-et-café__70-x-50-cm_huile-sur-toile_2017-.png" alt="" onclick="change(this)" >
+            
+                <img id="slide-4" src="../assets/Stilllife-Natures mortes/Stillife (Théière marocaine avec son verre à thé)_70 x 100 cm_huile sur toile_2014 (1).jpg" alt="" onclick="change(this)" >
+            
+                <img  id="slide-5" src="../assets/Stilllife-Natures mortes/Stilllife1 - Linda Moufadil.webp" alt="" onclick="change(this)" >
+            
+                <img id="slide-6" src="../assets/Stilllife-Natures mortes/Stillife-Linda Moufadil.jpg" alt="" onclick="change(this)" >
+            
+                <img id="slide-7" src="../assets/Stilllife-Natures mortes/Capture teegarten tee.PNG" alt="" onclick="change(this)" >
+            </div>
+
+            <div class="dots">
+                <a href="#slide-1" ></a>
+                <a href="#slide-2" ></a>
+                <a href="#slide-3"></a>
+                <a href="#slide-4"></a>
+                <a href="#slide-5"></a>
+                <a href="#slide-6"></a>
+                <a href="#slide-7"></a>
+            </div>
+        </div>
+
+        <div class="popup-image">  
+            <span>&times;</span> 
+            <img src="../assets/Stilllife-Natures mortes/Capture teegarten tee.PNG" alt="">
+        </div>
+    </section>
+    
+    <script>
+
+        /*function change(element) {
+            element.classList.toggle("fullsize");
+        }*/
+        document.querySelectorAll('.slider img').forEach(image =>{
+            image.onclick = () => {
+                document.querySelector('.popup-image').style.display = 'block';
+                document.querySelector('.popup-image img').src = image.getAttribute('src');
+            }
+        });
+
+        document.querySelector('.popup-image span').onclick = () => {
+            document.querySelector('.popup-image').style.display = 'none';
+        };
+
+        document.querySelector('.dots a').onclick = () => {
+            document.querySelector('.dots a').style.backgroundColor = red;
+        }
+
+        document.querySelectorAll('.dots').forEach(div => {
+  div.addEventListener('click', changeColor);
+});
+
+function changeColor(event) {
+  const element = event.target;
+
+  var currentColor = element.style.backgroundColor;
+  if (currentColor == "red") {
+    element.style.backgroundColor = "green";
+  } else {
+    element.style.backgroundColor = "red";
+  }
+}
+    </script>
+</body>
+
+</html>

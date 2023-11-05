@@ -39,7 +39,7 @@ body {
   inset: 0px;
   z-index: 100;
   visibility: hidden;
-  animation: spinner 2s linear;
+  animation: spinner 1s linear;
 }
 
 .ring{
@@ -53,8 +53,8 @@ body {
 
 .ring:nth-child(1){
   border-bottom-width: 8px;
-  border-color: rgb(255, 0, 255);
-  animation: rotate1 2s linear;
+  border-color: #c90a4e;
+  animation: rotate1 1s linear;
 }
 
 @keyframes rotate1{
@@ -73,7 +73,7 @@ body {
 .ring:nth-child(2){
   border-right-width: 8px;
   border-color: var(--main-color);
-  animation: rotate2 2s linear;
+  animation: rotate2 1s linear;
 }
 
 @keyframes rotate2{
@@ -92,7 +92,7 @@ body {
 .ring:nth-child(3){
   border-top-width: 8px;
   border-color: rgb(0, 247, 13);
-  animation: rotate3 2s linear;
+  animation: rotate3 1s linear;
 }
 
 @keyframes rotate3{
@@ -142,14 +142,16 @@ nav {
   justify-content: space-between;
 }
 
-nav .logo a {
-  font-size: 1.5rem;
+nav a img{
+  /*font-size: 1.5rem;
   font-weight: 600;
   color: var(--main-color);
-  transition: 0.3s;
+  transition: 0.3s;*/
+  width: 220px;
 }
-nav .logo a:hover {
-  color: var(--primary-color-dark);
+nav a img:hover {
+  /*color: var(--primary-color-dark);*/
+  cursor: pointer;
 }
 
 nav .checkbox {
@@ -306,35 +308,6 @@ main p{
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* SECTION FOOTER */
 footer{
     width: 100%;
@@ -397,7 +370,7 @@ footer p{
 
 
 /* MEDIA QUERIES  */
-@media (width < 815px) {
+@media (width < 1060px) {
   nav .checkbox {
     display: block;
   }
