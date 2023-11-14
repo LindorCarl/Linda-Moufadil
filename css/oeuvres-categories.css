@@ -290,6 +290,95 @@ article{
     border-radius: 20px;
 }
 
+/*   =================>   */
+
+.card-articles{
+  width: 90%;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 20px;
+  margin: 30px auto;
+}
+
+.card{
+  position: relative;
+  width: 30%;
+  height: 300px;
+  box-shadow: 1px 3px 8px #e2e2e2;
+  margin-bottom: 20px;
+}
+
+.card .face{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  overflow: hidden;
+  transition: 0.7s ease;
+  transform-style: preserve-3d;
+}
+
+.card .front{
+  transform: perspective(600px) rotateY(0deg);
+  width: 100%;
+  height: 100%;
+}
+
+.card .front img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 15px 15px 10px 15px;
+}
+
+.card .back{
+  width: 100%;
+  position: absolute;
+  transform: perspective(600px) rotateY(180deg);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card .back h2{
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  color: #6b7280;
+}
+
+.card .back h3{
+  text-transform: uppercase;
+  color: #00abf0;
+  font-style: italic;
+  font-size: 16px;
+}
+
+.card .back p{
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+.card .back p:hover{
+  color: #00abf0;
+}
+
+.card:hover .front{
+  transform: perspective(600px) rotateY(180deg);
+}
+
+.card:hover .back{
+  transform: perspective(600px) rotateY(0deg);
+}
+
 /* ====================================> SECTION POPUP */
 .popup{
   position: fixed;
@@ -481,11 +570,11 @@ footer p{
 /* ====================> MEDIA QUERIES <=====================  */
 @media (width < 1100px) {
     
-  article{
+  article, .card-articles{
     height: auto;
   }
     
-  .article_category{
+  .article_category, .card{
       width: 46%;
       margin-bottom: 20px;
   }
@@ -509,16 +598,24 @@ footer p{
 }
 
 @media (width < 750px) {
-    article{
+    article, .card-articles{
         flex-direction: column;
         flex-wrap: wrap;
         height: auto;
     }
 
-    .article_category{
-        margin-bottom: 20px;
-        width: 100%;
+    .article_category, .card{
+        margin: 0 auto 20px auto;
+        width: 375px;
     }
+}
+
+@media (width < 475px) {
+ 
+  .card{
+      margin: 0 0 20px 0;
+      width: 100%;
+  }
 }
 
 @media (width < 1060px) {
